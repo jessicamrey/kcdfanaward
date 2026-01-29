@@ -1,0 +1,198 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: black;
+
+}
+
+.page-wrapper {
+  max-width: 1400px;   /* ancho máximo del contenido */
+  margin: 0 auto;      /* centra y crea márgenes laterales */
+  background-color: #111; /* opcional: fondo del contenido */
+  position: relative;
+}
+
+/* =======================
+ NAVBAR
+======================= */
+.navbar {
+  background: transparent;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: #f5c46b;
+}
+
+/* =======================
+ intro SECTION
+======================= */
+.intro-section {
+  height: 100vh;
+  background: url("../img/teatro.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.intro-text {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =======================
+ ABOUT SECTION
+======================= */
+.about-section {
+  height: 100vh;
+  background: url("../img/grupo.jpeg") center/cover no-repeat;
+  position: relative;
+}
+
+.overlay.blue {
+  background: rgba(15, 35, 60, 0.75);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about-text {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.subabout {
+	margin: 3%;
+	margin-bottom: 10%;
+}
+
+.subabout-title {
+	color: #ebd234;
+}
+
+/* =======================
+THANKS SECTION
+======================= */
+
+.thanks-title {
+	color: #ede3a6;
+}
+
+.thanks-section{
+	background-color: #d68654; 
+}
+
+.video-box {
+  width: 90%;              
+  aspect-ratio: 2 / 1;       
+  background: black;
+  overflow: hidden;
+  border-radius: 12px;       
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .video-box {
+    width: 90%;
+  }
+}
+
+
+/* =======================
+ FUNDRAISING SECTION
+======================= */
+.fundraising-section {
+  height: 100vh;
+}
+
+.fundraising-left {
+  background: url("../img/pirkstein.PNG") center/cover no-repeat;
+  position: relative;
+}
+
+.fundraising-right {
+  background: #1c1c1c;
+}
+
+.fundraising-left .content {
+  position: relative;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.text-cyan {
+  color: #bfe7ea;
+}
+
+
+/* =======================
+ BUTTONS
+======================= */
+.btn-gold {
+  background: #d6b26a;
+  color: #0d223a;
+  border-radius: 999px;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-gold:hover {
+  background: #c6a158;
+}
+
+.btn-blue {
+  background: #2c6f8e;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-blue:hover {
+  background: #255e78;
+}
+
+
+/* =======================
+ FOOTER
+======================= */
+.footer-section {
+  background: url("../img/forja.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.footer-section .overlay {
+  background: rgba(0,0,0,0.75);
+}
+
+.footer-section .label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.socials i {
+  font-size: 1.4rem;
+  margin: 0 8px;
+  cursor: pointer;
+}
