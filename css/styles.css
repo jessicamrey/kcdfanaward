@@ -7,9 +7,9 @@ html, body {
 }
 
 .page-wrapper {
-  max-width: 1400px;   /* ancho máximo del contenido */
-  margin: 0 auto;      /* centra y crea márgenes laterales */
-  background-color: #111; /* opcional: fondo del contenido */
+  max-width: 1400px;   
+  margin: 0 auto;     
+  background-color: #111;
   position: relative;
 }
 
@@ -22,11 +22,44 @@ html, body {
 
 .nav-link {
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
+  display: inline !important;
 }
 
 .nav-link:hover {
   color: #f5c46b;
+}
+
+.brand-white {
+  display: block;
+  width: 30vw;      
+  aspect-ratio: 16 / 5;
+  background-image: url("../icons/fan-award-project-logo-w.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+
+
+.nav-link-br {
+  color: #101b2d;
+  font-size: 1.5rem;
+  display: inline !important;
+}
+
+.nav-link-br:hover {
+  color: #2f7890;
+}
+
+.brand-br {
+  display: block;
+  width: 30vw;      
+  aspect-ratio: 16 / 5;
+  background-image: url("../icons/fan-award-project-logo-br.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 /* =======================
@@ -56,7 +89,7 @@ html, body {
 ======================= */
 .about-section {
   height: 100vh;
-  background: url("../img/grupo.jpeg") center/cover no-repeat;
+  background: url("../img/gothicArcs.jpg") center/cover no-repeat;
   position: relative;
 }
 
@@ -90,6 +123,24 @@ html, body {
   );
 }
 
+
+
+.process-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;   
+  background-color: #fff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.process-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;    
+}
+
 /* =======================
 THANKS SECTION
 ======================= */
@@ -101,6 +152,10 @@ THANKS SECTION
 .thanks-section{
   background: url("../img/thanksBackground.jpg") center/cover no-repeat;
   position: relative;
+}
+
+.thanks-section .text-warning{
+	color: #2f7890 !important;
 }
 
 .video-box {
@@ -121,6 +176,12 @@ THANKS SECTION
     width: 90%;
   }
 }
+
+.mt-nav {
+	margin-top: 15rem !important;
+}
+
+
 
 
 /* =======================
@@ -167,28 +228,37 @@ COMMENTS SECTION
 ======================= */
 .fundraising-section {
   height: 100vh;
+  position: relative; 
+  overflow: hidden;
+}
+
+.fundraising-section .text-warning{
+	color: #2f7890 !important;
+}
+
+.fundraising-section .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 .fundraising-left {
-  background: url("../img/pirkstein.PNG") center/cover no-repeat;
+  background: url("../img/pirkstein.PNG") center / cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   position: relative;
-}
-
-.fundraising-right {
-  background: #1c1c1c;
 }
 
 .fundraising-left .content {
   position: relative;
+  z-index: 2;
 }
 
 .subtitle {
   font-size: 0.95rem;
   opacity: 0.8;
-}
-
-.text-cyan {
-  color: #bfe7ea;
 }
 
 /* =======================
