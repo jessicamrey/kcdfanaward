@@ -16,9 +16,16 @@ html, body {
 /* =======================
  NAVBAR
 ======================= */
+
 .navbar {
+  position: fixed;
   background: transparent;
-  position: fixed !important;
+}
+
+@media (min-width: 1600px) {
+  .navbar {
+    width: 75% !important;
+  }
 }
 
 .nav-link {
