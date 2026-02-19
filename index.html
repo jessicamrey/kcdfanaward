@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Fan Award Project</title>
-  <meta name="viewport" about="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/i18n.js"></script>
   <script src="js/general.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
   
 </head>
@@ -19,18 +21,32 @@
 <!-- =======================
  NAVBAR
 ======================= -->
-<nav class="navbar navbar-dark navbar-expand-lg w-100 top-0 z-3">
+<nav class="navbar navbar-dark fixed-top z-3">
   <div class="container-fluid px-5">
-    <a class="navbar-brand fw-bold  brand-white" href="#"></a>
 
-    <ul class="navbar-nav ms-auto text-end flex-column">
-      <li class="nav-item"><a class="nav-link text-warning" href="#award" data-i18n="nav-award"></a></li>
-      <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav-about"></a></li>
-      <li class="nav-item"><a class="nav-link" href="#thanks" data-i18n="nav-projects"></a></li>
-      <li class="nav-item"><a class="nav-link" href="#quotes" data-i18n="nav-fundraising"></a></li>
-      <li class="nav-item"><a class="nav-link" href="#subabout" data-i18n="nav-design"></a></li>
-      <li class="nav-item"><a class="nav-link" href="#fundraising" data-i18n="nav-join"></a></li>
-    </ul>
+    <a class="navbar-brand fw-bold brand-white" href="#"></a>
+
+	<button class="navbar-toggler navbar-toggler-fixed"
+	  type="button"
+	  data-bs-toggle="collapse"
+	  data-bs-target="#navbarMenu"
+	  aria-controls="navbarMenu"
+	  aria-expanded="false"
+	  aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse collapse-animate" id="navbarMenu">
+      <ul class="navbar-nav text-end flex-column mt-3">
+        <li class="nav-item"><a class="nav-link text-warning" href="#award" data-i18n="nav-award"></a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav-about"></a></li>
+        <li class="nav-item"><a class="nav-link" href="#thanks" data-i18n="nav-projects"></a></li>
+        <li class="nav-item"><a class="nav-link" href="#quotes" data-i18n="nav-fundraising"></a></li>
+        <li class="nav-item"><a class="nav-link" href="#subabout" data-i18n="nav-design"></a></li>
+        <li class="nav-item"><a class="nav-link" href="#fundraising" data-i18n="nav-join"></a></li>
+      </ul>
+    </div>
+
   </div>
 </nav>
 
@@ -38,11 +54,27 @@
  SECTION 1 – INTRO
 ======================= -->
 <section id="award" class="intro-section d-flex align-items-center">
-  <div class="overlay"></div>
 
   <div class="container text-center text-white position-relative">
-    <p class="intro-text" data-i18n="s1-intro-text">
+   
+	<div class="row">
+		
+	   <h1 class="intro-text" data-i18n="s1-title">
+		</h1>
+	</div>
+	<div class="row">
+		
+	    <p class="intro-text" data-i18n="s1-intro-text-1">
+		</p>
+	</div>
+	<div class="row">
+		    <p class="intro-text" data-i18n="s1-intro-text-2">
     </p>
+	</div>
+	<div class="row">
+		    <p class="intro-text" data-i18n="s1-intro-text-3">
+    </p>
+	</div>
 
     <button class="btn btn-gold mt-4" data-i18n="s1-read-more">
     </button>
