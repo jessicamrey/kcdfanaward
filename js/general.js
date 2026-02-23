@@ -1,59 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
-  const brand = document.querySelector(".navbar-brand");
-  const navLinks = document.querySelectorAll(".navbar .nav-link");
-  const sections = document.querySelectorAll("section[id]");
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('readMoreBtn');
+  const hiddenContent = document.querySelector('.hidden-content');
 
-  const darkSections = ["thanks", "fundraising"];
+  btn.addEventListener('click', function () {
+    hiddenContent.classList.toggle('show');
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-		  		
-		navLinks.forEach(link => link.classList.remove("text-warning"));
-		navLinks.forEach(link => link.classList.remove("text-warning-br"));
-		
-        if (!entry.isIntersecting) return;
-
-        const id = entry.target.id;
-
-        if (darkSections.includes(id)) {
-          navLinks.forEach(link => {
-            link.classList.add("nav-link-br");
-          });
-
-          brand.classList.add("brand-br");
-          brand.classList.remove("brand-white");
-		  
-		  
-		
-		navLinks.forEach(link => {
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("text-warning-br");
-          }
-        });
-
-        } else {
-          navLinks.forEach(link => {
-            link.classList.add("nav-link");
-            link.classList.remove("nav-link-br");
-          });
-
-          brand.classList.add("brand-white");
-          brand.classList.remove("brand-br");
-		  
-			navLinks.forEach(link => {
-			  if (link.getAttribute("href") === `#${id}`) {
-				link.classList.add("text-warning");
-			  }
-			});
-        }
-
-		
-      });
-    },
-    { threshold: 0.6 }
-  );
-
-  sections.forEach(section => observer.observe(section));
+    this.textContent = hiddenContent.classList.contains('show')
+      ? 'READ LESS'
+      : 'READ MORE';
+  });
 });
+
+
+/* read more dark theme
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('readMoreBtn');
+  const hidden = document.querySelector('.hidden-content');
+  const overlay = document.querySelector('.intro-overlay');
+
+  if (!btn || !hidden || !overlay) return;
+
+  btn.addEventListener('click', () => {
+    const expanded = hidden.classList.toggle('show');
+
+    overlay.classList.toggle('is-expanded', expanded);
+
+    btn.textContent = expanded ? 'Leer menos' : 'Leer más';
+  });
+});*/
