@@ -9,7 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/i18n.js"></script>
-  <script src="js/general.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -21,35 +20,66 @@
 <!-- =======================
  NAVBAR
 ======================= -->
-<nav class="navbar navbar-dark fixed-top z-3">
+<nav class="navbar navbar-dark navbar-expand-lg z-3 bg-dark-blue">
   <div class="container-fluid px-5">
 
-    <a class="navbar-brand fw-bold brand-white" href="#"></a>
+    <a class="navbar-brand fw-bold brand-white" href="#">
+      <img src="./icons/fan-award-project-logo-w.png" class="navbar-logo">
+    </a>
 
-	<button class="navbar-toggler navbar-toggler-fixed"
-	  type="button"
-	  data-bs-toggle="collapse"
-	  data-bs-target="#navbarMenu"
-	  aria-controls="navbarMenu"
-	  aria-expanded="false"
-	  aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-	<div class="collapse navbar-collapse collapse-animate" id="navbarMenu">
-      <ul class="navbar-nav text-end flex-column mt-3">
-        <li class="nav-item"><a class="nav-link text-warning" href="#award" data-i18n="nav-award"></a></li>
-        <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav-about"></a></li>
-        <li class="nav-item"><a class="nav-link" href="#thanks" data-i18n="nav-projects"></a></li>
-        <li class="nav-item"><a class="nav-link" href="#quotes" data-i18n="nav-fundraising"></a></li>
-        <li class="nav-item"><a class="nav-link" href="#subabout" data-i18n="nav-design"></a></li>
-        <li class="nav-item"><a class="nav-link" href="#fundraising" data-i18n="nav-join"></a></li>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+      <ul class="navbar-nav gap-lg-3">
+
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="#award" data-i18n="nav-award"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about" data-i18n="nav-about"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#thanks" data-i18n="nav-projects"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#quotes" data-i18n="nav-fundraising"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#subabout" data-i18n="nav-design"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#fundraising" data-i18n="nav-join"></a>
+        </li>
+
       </ul>
+    </div>
+
+    <div class="d-none d-lg-flex align-items-center gap-2">
+        <a class="navbar-brand fw-bold brand-white" href="#">
+		  <img src="./icons/united-kingdom.png" class="navbar-lang">
+		</a>
+    </div>
+	<div class="d-none d-lg-flex align-items-center gap-2">
+        <a class="navbar-brand fw-bold brand-white" href="#">
+		  <img src="./icons/czech-republic.png" class="navbar-lang">
+		</a>
     </div>
 
   </div>
 </nav>
-
 <!-- =======================
  SECTION 1 – INTRO
 ======================= -->
