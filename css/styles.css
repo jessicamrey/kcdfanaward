@@ -432,8 +432,7 @@ COMMENTS SECTION
 }
 
 .quote-content {
-  max-width: 900px;
-    display: none;
+  display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -456,6 +455,13 @@ COMMENTS SECTION
   color: #5fb3c4;
 }
 
+.quote-wrapper {
+  position: relative;
+  max-width: 700px;   
+  margin: 0 auto;
+}
+
+
 .quote-nav {
   position: absolute;
   top: 50%;
@@ -477,16 +483,121 @@ COMMENTS SECTION
 }
 
 .quote-nav.left {
-  left: 2rem;
+  left: 1rem;
 }
 
 .quote-nav.right {
-  right: 2rem;
+  right: 1rem;
 }
 
 .quote-nav:hover {
   opacity: 0.8;
   transform: translateY(-50%) scale(1.1);
+}
+
+.more-quotes-section {
+  margin-top: 5%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* estado visible */
+.more-quotes-section.show {
+  max-height: 2000px; /* suficientemente grande */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.quote-card {
+  border: 1px solid #d4af37;
+  padding: 25px;
+  color: #fff;
+  background: transparent;
+}
+
+
+
+#quotes-container {
+  display: block;
+}
+
+
+.quote-card {
+  border: 1px solid #d4af37;
+  padding: 25px;
+  color: #fff;
+  background: transparent;
+}
+
+.quote-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.quote-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.quotes-pagination {
+  margin-top: 2% !important;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.quotes-pagination button {
+  background: #e5f4ff;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.quotes-pagination button.active {
+  background: #2b7a9a;
+  color: #fff;
+}
+
+.quotes-pagination button:hover {
+  background: #bde7ff;
+}
+
+#quotes-pagination {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#quotes-pagination > .page-item {
+  display: list-item; 
+}
+
+#quotes-pagination .page-link {
+  border: 1px solid #dee2e6;
+  background-color: transparent;
+}
+
+#quotes-pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+#quotes-pagination .page-item.disabled .page-link {
+  pointer-events: none;
+  color: #6c757d;
 }
 
 /* =======================
@@ -517,33 +628,6 @@ COMMENTS SECTION
 .btn-blue:hover {
   background: #255e78;
 }
-
-
-.quotes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto 2rem;
-}
-.quote-card {
-  border: 1px solid #caa44d;
-  padding: 1.5rem;
-  color: #fff;
-  background: transparent;
-}
-
-.quote-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-.quote-card p {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-
 
 /* =======================
  FOOTER
