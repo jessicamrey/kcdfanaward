@@ -1,3 +1,4 @@
+
 html, body {
   height: 100%;
   margin: 0;
@@ -5,6 +6,31 @@ html, body {
   background-color: black;
 
 }
+
+.primary{
+	color:#2F7890;
+}
+
+.primary-dark{
+	color: #101B2D;
+}
+
+.primary-light{
+	color: #CBF2FF;
+}
+	
+.secondary{
+	color: #d6b26a;
+}
+
+.secondary-light{
+	color: #FFE3A3;
+}
+
+.secondary-dark{
+	color: #B66222;
+}
+
 
 .page-wrapper {
   background-color: #111;
@@ -205,7 +231,7 @@ html, body {
 }
 
 .subabout-title {
-	color: #ebd234;
+	color: #d6b26a;
 }
 
 .subabout-section {
@@ -214,10 +240,29 @@ html, body {
       #14243a 0%,
       #0b1626 60%
   );
-  	padding-top: 15rem;
+  	padding: 2rem;
+}
+
+.container-donate{
+	background: radial-gradient(
+      circle at top,
+      #14243a 0%,
+      #0b1626 60%
+    );
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 27%;
+	position: relative;
+	padding-bottom: 1%;
 
 }
 
+.container-donate .donate-btn {
+  position: absolute;
+  bottom: -35%;  
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 
 .process-img-box {
@@ -234,6 +279,11 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;    
+}
+
+.item-text{
+	  color: #d6b26a;
+      text-align: center;
 }
 
 /* =======================
@@ -374,6 +424,11 @@ COMMENTS SECTION
 .subtitle {
   font-size: 0.95rem;
   opacity: 0.8;
+    display: inline;
+}
+
+.subtitle a{
+	color: #CBF2FF;
 }
 
 /* =======================
@@ -611,7 +666,6 @@ COMMENTS SECTION
 
 .btn-blue {
   background: #2c6f8e;
-  color: #fff;
   border-radius: 999px;
   padding: 0.6rem 2rem;
   font-weight: 600;
