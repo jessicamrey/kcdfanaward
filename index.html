@@ -50,11 +50,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#about" data-i18n="nav-about"></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#thanks" data-i18n="nav-projects"></a>
+          <a class="nav-link" href="#about" data-i18n="nav-projects"></a>
         </li>
 
         <li class="nav-item">
@@ -72,16 +68,17 @@
       </ul>
     </div>
 
-    <div class="d-none d-lg-flex align-items-center gap-2">
-        <a class="navbar-brand fw-bold brand-white" href="#">
-		  <img src="./icons/united-kingdom.png" class="navbar-lang">
-		</a>
-    </div>
 	<div class="d-none d-lg-flex align-items-center gap-2">
-        <a class="navbar-brand fw-bold brand-white" href="#">
-		  <img src="./icons/czech-republic.png" class="navbar-lang">
-		</a>
-    </div>
+	  <a href="#" class="navbar-brand lang-btn" data-lang="en">
+		<img src="./icons/united-kingdom.png" class="navbar-lang">
+	  </a>
+	</div>
+
+	<div class="d-none d-lg-flex align-items-center gap-2">
+	  <a href="#" class="navbar-brand lang-btn" data-lang="cz">
+		<img src="./icons/czech-republic.png" class="navbar-lang">
+	  </a>
+	</div>
 
   </div>
 </nav>
@@ -91,7 +88,7 @@
 <section id="award" class="intro-section d-flex align-items-center">
   <div class="intro-bg"></div>
  <div class="intro-overlay">
-	  <div class="container text-center text-white position-relative"> 
+	  <div class="container text-center text-white position-relative section"> 
 		<div class="row">
 		   <h1 class="display-3 fw-bold" data-i18n="s1-title">
 			</h1>
@@ -144,7 +141,7 @@
 <section id="about" class="about-section d-flex align-items-center">
 
 
-  <div class="container-fluid text-center text-white position-relative overlay blue">
+  <div class="container-fluid text-center text-white position-relative overlay blue section">
     <h1 class="display-3 fw-bold about-title" data-i18n="s2-title"></h1>
 	<h2  class="about-title" data-i18n="s2-subtitle"></h2>
 
@@ -177,7 +174,7 @@
 
 <section id="quotes" class="quote-section">
 
-<div >
+<div class="section">
 
 	<div class ="row g-4">
 			<div  class="col-md-2">
@@ -220,12 +217,11 @@
 
 <section id="comments" class="comments-section d-flex align-items-center">
 <div class="overlay"></div>
-  <div class="container-fluid text-center text-white position-relative  mt-4">
+  <div class="container-fluid text-center text-white position-relative  mt-4 section">
     <h1 class="display-3 fw-semibold mb-4 comments-title" data-i18n="s5-title"></h1>
 	
     <div class="comments-card">
-     <!-- <div class="placeholder">
-      </div>-->
+
     </div>
 	
   </div>
@@ -237,7 +233,7 @@
 
 <section id="subabout" class="subabout-section  align-items-center">
 
-  <div class="container-fluid text-center text-white position-relative ">
+  <div class="container-fluid text-center text-white position-relative section">
     <h1 class="display-4 fw-semibold mb-4 subabout-title" data-i18n="s6-title"></h1>
     <p class="about-text" data-i18n="s6-subtitle">
 
@@ -294,17 +290,14 @@
  SECTION 7 – FUNDRAISING
 ======================= -->
 <section id="fundraising" class="fundraising-section">
-  <div class="row g-0 h-100">
-  
-    <!-- LEFT -->
+  <div class="row g-0 h-100 ">
     <div class="col-md-12 fundraising-left d-flex align-items-center">
       <div class="container-fluid text-center position-relative container-donate">
         <h1 class="display-3 fw-bold secondary" data-i18n="s4-title"></h1>
         <p class="subtitle primary-light" data-i18n="s4-subtitle"></p>
 		<p class="subtitle primary-light"> <a href="https://hellohenry.eu/">hellohenry.eu</a></p>
 
-        <button class="btn btn-blue mt-3 donate-btn secondary">
-          DONATE NOW
+        <button class="btn btn-blue mt-3 donate-btn secondary" data-i18n="s7-donate">
         </button>
       </div>
     </div>

@@ -7,6 +7,18 @@ html, body {
 
 }
 
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 .primary{
 	color:#2F7890;
 }
@@ -97,6 +109,27 @@ html, body {
   height: 25px;  
   width: auto;    
   object-fit: contain;
+}
+
+.navbar-lang {
+  width: 28px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.lang-btn:not(.active) .navbar-lang {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.lang-btn:not(.active):hover .navbar-lang {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.lang-btn.active .navbar-lang {
+  filter: none;
+  opacity: 1;
 }
 
 /* =======================

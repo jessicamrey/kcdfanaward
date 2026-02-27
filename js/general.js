@@ -142,26 +142,57 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
   
+    const sections = document.querySelectorAll(".section");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  sections.forEach(section => observer.observe(section));
+  
+  
+	//language  
+    const langButtons = document.querySelectorAll(".lang-btn");
+	  if (!langButtons.length) {
+		console.error("No se encontraron botones de idioma");
+		return;
+	  }
+
+	  function setActiveLang(lang) {
+		langButtons.forEach(btn => {
+		  btn.classList.toggle("active", btn.dataset.lang === lang);
+		});
+	  }
+
+	  langButtons.forEach(btn => {
+		btn.addEventListener("click", e => {
+		  e.preventDefault();
+		  const lang = btn.dataset.lang;
+		  loadLanguage(lang);
+		  setActiveLang(lang);
+		  localStorage.setItem("lang", lang);
+		});
+	  });
+
+	  const savedLang = localStorage.getItem("lang");
+	  const browserLang = navigator.language.startsWith("cs") ? "cz" : "en";
+	  const initialLang = savedLang || browserLang;
+
+	  loadLanguage(initialLang);
+	  setActiveLang(initialLang);
+	// end language
+  
 });
 
-
-/* read more dark theme
-
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('readMoreBtn');
-  const hidden = document.querySelector('.hidden-content');
-  const overlay = document.querySelector('.intro-overlay');
-
-  if (!btn || !hidden || !overlay) return;
-
-  btn.addEventListener('click', () => {
-    const expanded = hidden.classList.toggle('show');
-
-    overlay.classList.toggle('is-expanded', expanded);
-
-    btn.textContent = expanded ? 'Leer menos' : 'Leer más';
-  });
-});*/
 
 
   
