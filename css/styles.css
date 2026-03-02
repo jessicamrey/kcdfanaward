@@ -142,7 +142,7 @@ html, body {
 .intro-bg {
   position: absolute;
   inset: 0;
-  height: 100vh; 
+  height: 100vh;
   background: url("../img/bg-hero.png") center/cover no-repeat;
 }
 .intro-bg::after {
@@ -175,24 +175,15 @@ html, body {
 }
 .intro-overlay {
   width: 100%;
-  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 
-  padding: 10rem 2rem 4rem;
+  padding: 5rem 2rem 4rem;
   box-sizing: border-box;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.05) 0%,    
-    rgba(0, 0, 0, 0.15) 35%,   
-    rgba(0, 0, 0, 0.55) 65%,    
-    rgba(0, 0, 0, 0.85) 85%,    
-    rgba(0, 0, 0, 0.95) 100%    
-  );
-  z-index:1;
+  background: linear-gradient(...);
+  z-index: 1;
 }
 @media (max-width: 768px) {
 	.intro-overlay.is-expanded {
@@ -212,16 +203,24 @@ html, body {
   overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
-  transition: 
-    max-height 0.6s ease,
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition:
+    max-height 0.8s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .hidden-content.show {
-  max-height: 1000px; 
+  max-height: 2000px; /* alto seguro */
   opacity: 1;
   transform: translateY(0);
+}
+
+.intro-overlay > .container.section {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 /* =======================
@@ -471,18 +470,22 @@ COMMENTS SECTION
 
 .quote-section {
   position: relative;
-  min-height: 70vh;
   background: radial-gradient(
-      circle at top,
-      #14243a 0%,
-      #0b1626 60%
+    circle at top,
+    #14243a 0%,
+    #0b1626 60%
   );
   color: #d9f2ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
+}
+
+.quote-hero {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .quote-content.active {
@@ -547,7 +550,7 @@ COMMENTS SECTION
 
 .quote-nav {
   position: absolute;
-  top: 30%;
+  top: 9rem;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -562,6 +565,14 @@ COMMENTS SECTION
 		padding-left: 6%;
 		padding-right: 6%;
 	}
+	.quote-nav.left {
+	  left: -1rem !important;
+	}
+
+	.quote-nav.right {
+	  right: -1rem !important;
+	}
+
 
 }
 
@@ -579,19 +590,21 @@ COMMENTS SECTION
 }
 
 .more-quotes-section {
-  margin-top: 5%;
+  margin-top: 4rem;
   overflow: hidden;
+
   max-height: 0;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(20px);
+
   transition:
-    max-height 0.6s ease,
-    opacity 0.4s ease,
-    transform 0.4s ease;
+    max-height 0.7s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .more-quotes-section.show {
-  max-height: 2000px; 
+  max-height: 3000px;
   opacity: 1;
   transform: translateY(0);
 }
