@@ -1,7 +1,20 @@
 
 
 
-import { quotes } from "./quotes-data.js";
+let quotes = [];
+
+async function loadQuotes() {
+  const response = await fetch("js/quotes.json");
+  quotes = await response.json();
+
+  renderQuotes();
+  renderPagination();
+  renderQuotesSimple();
+  initQuotesCarousel();
+
+}
+
+loadQuotes();
 
 //Scroll arrow
 
@@ -126,8 +139,6 @@ window.changePage = function(page) {
   renderPagination();
 };
 
-renderQuotes();
-renderPagination();
 
 
 
@@ -150,9 +161,6 @@ function renderQuotesSimple() {
     )
     .join("");
 }
-
-renderQuotesSimple();
-initQuotesCarousel();
 
 
 // carrousel 
