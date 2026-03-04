@@ -10,6 +10,7 @@ let currentPage = 1;
 
 const container = document.getElementById("more-quotes-container");
 const pagination = document.getElementById("quotes-pagination");
+const pageSelect = document.getElementById("quotes-page-select");
 
 function renderQuotes() {
   container.innerHTML = `
@@ -35,9 +36,38 @@ function renderPagination() {
   pagination.innerHTML = "";
   const totalPages = Math.ceil(quotes.length / perPage);
 
-  pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})">&lt;</button>`;
+  // left
+  pagination.innerHTML += `
+    <button ${currentPage === 1 ? "disabled" : ""} onclick="changePage(${currentPage - 1})">&lt;</button>
+  `;
 
-  for (let i = 1; i <= totalPages; i++) {
+  const maxVisible = 3;
+  let start = 1;
+  let end = totalPages;
+
+  if (totalPages > maxVisible) {
+
+    if (currentPage <= 1) {
+      start = 1;
+      end = maxVisible;
+    } 
+    else if (currentPage >= totalPages - 1) {
+      start = totalPages - (maxVisible - 1);
+      end = totalPages;
+    } 
+    else {
+      start = currentPage - 1;
+      end = currentPage + 1;
+    }
+
+  }
+
+  // dots left
+  if (start > 1) {
+    pagination.innerHTML += `<span class="dots">...</span>`;
+  }
+
+  for (let i = start; i <= end; i++) {
     pagination.innerHTML += `
       <button class="${i === currentPage ? "active" : ""}" onclick="changePage(${i})">
         ${i}
@@ -45,8 +75,18 @@ function renderPagination() {
     `;
   }
 
-  pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})">&gt;</button>`;
+  // dots right
+  if (end < totalPages) {
+    pagination.innerHTML += `<span class="dots">...</span>`;
+  }
+
+  // next
+  pagination.innerHTML += `
+    <button ${currentPage === totalPages ? "disabled" : ""} onclick="changePage(${currentPage + 1})">&gt;</button>
+  `;
 }
+
+
 
 window.changePage = function(page) {
   const totalPages = Math.ceil(quotes.length / perPage);
@@ -116,33 +156,58 @@ function initQuotesCarousel() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	
+
+  let translations = {};
+
+  async function loadLanguage(lang) {
+    const response = await fetch(`i18n/${lang}.json`);
+    translations = await response.json();
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[key]) {
+        el.textContent = translations[key];
+      }
+    });
+
+    updateReadMoreButtons();
+  }
+
   const btn = document.getElementById('readMoreBtn');
   const hiddenContent = document.querySelector('.hidden-content');
-  
 
-  //Intro Read more
-  btn.addEventListener('click', function () {
-    hiddenContent.classList.toggle('show');
-
-    this.textContent = hiddenContent.classList.contains('show')
-      ? 'READ LESS'
-      : 'READ MORE';
-  });
-  
-    const readMoreQuotesBtn = document.getElementById("readMoreQuotesBtn");
+  const readMoreQuotesBtn = document.getElementById("readMoreQuotesBtn");
   const moreQuotesSection = document.getElementById("more-quotes");
 
+  function updateReadMoreButtons() {
+
+    if (btn) {
+      btn.textContent = hiddenContent.classList.contains("show")
+        ? translations.read_less
+        : translations.read_more;
+    }
+
+    if (readMoreQuotesBtn) {
+      readMoreQuotesBtn.textContent = moreQuotesSection.classList.contains("show")
+        ? translations.read_less
+        : translations.read_more;
+    }
+
+  }
+
+  // Intro Read more
+  btn.addEventListener('click', function () {
+    hiddenContent.classList.toggle('show');
+    updateReadMoreButtons();
+  });
+
+  // Quotes Read more
   readMoreQuotesBtn.addEventListener("click", function () {
     moreQuotesSection.classList.toggle("show");
-
-    this.textContent = moreQuotesSection.classList.contains("show")
-      ? "READ LESS"
-      : "READ MORE";
+    updateReadMoreButtons();
   });
-  
-  
-    const sections = document.querySelectorAll(".section");
+
+  const sections = document.querySelectorAll(".section");
 
   const observer = new IntersectionObserver(
     entries => {
@@ -158,41 +223,39 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
   sections.forEach(section => observer.observe(section));
-  
-  
-	//language  
-    const langButtons = document.querySelectorAll(".lang-btn");
-	  if (!langButtons.length) {
-		console.error("No se encontraron botones de idioma");
-		return;
-	  }
 
-	  function setActiveLang(lang) {
-		langButtons.forEach(btn => {
-		  btn.classList.toggle("active", btn.dataset.lang === lang);
-		});
-	  }
+  // language  
+  const langButtons = document.querySelectorAll(".lang-btn");
 
-	  langButtons.forEach(btn => {
-		btn.addEventListener("click", e => {
-		  e.preventDefault();
-		  const lang = btn.dataset.lang;
-		  loadLanguage(lang);
-		  setActiveLang(lang);
-		  localStorage.setItem("lang", lang);
-		});
-	  });
+  if (!langButtons.length) {
+    console.error("No se encontraron botones de idioma");
+    return;
+  }
 
-	  const savedLang = localStorage.getItem("lang");
-	  const browserLang = navigator.language.startsWith("cs") ? "cz" : "en";
-	  const initialLang = savedLang || browserLang;
+  function setActiveLang(lang) {
+    langButtons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+  }
 
-	  loadLanguage(initialLang);
-	  setActiveLang(initialLang);
-	// end language
-  
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const lang = btn.dataset.lang;
+      loadLanguage(lang);
+      setActiveLang(lang);
+      localStorage.setItem("lang", lang);
+    });
+  });
+
+  const savedLang = localStorage.getItem("lang");
+  const browserLang = navigator.language.startsWith("cs") ? "cz" : "en";
+  const initialLang = savedLang || browserLang;
+
+  loadLanguage(initialLang);
+  setActiveLang(initialLang);
+
 });
-
 
 
   

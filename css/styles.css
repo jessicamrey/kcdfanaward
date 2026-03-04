@@ -654,6 +654,12 @@ COMMENTS SECTION
   color: #d1d5db;
 }
 
+.dots{
+  padding: 8px 10px;
+  color: #ccc;
+  font-weight: bold;
+}
+
 .quotes-pagination {
   margin-top: 2% !important;
   display: flex;
@@ -704,6 +710,22 @@ COMMENTS SECTION
 #quotes-pagination .page-item.disabled .page-link {
   pointer-events: none;
   color: #6c757d;
+}
+
+.quotes-pagination-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:2%;
+}
+
+.quotes-page-select{
+  padding:6px 10px;
+  border-radius:4px;
+  border:1px solid #ccc;
+  background:#e5f4ff;
+  cursor:pointer;
 }
 
 /* =======================

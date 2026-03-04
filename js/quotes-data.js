@@ -39,4 +39,43 @@ export const quotes = [
     author: "Lorem Ipsum",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
   }
+  ,
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  }
+  ,
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  }
+  ,
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  {
+    author: "Lorem Ipsum",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  }
 ];

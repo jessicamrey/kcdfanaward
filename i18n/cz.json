@@ -34,5 +34,7 @@
   "f-email-data" : "hello@figma.com",
   "f-socials" : "Socials",
   "f-team-title" : "Meet the Team",
-  "f-team-text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."  
+  "f-team-text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."  ,
+  "read_more": "ČÍST VÍCE",
+  "read_less": "ČÍST MÉNĚ"
 }
