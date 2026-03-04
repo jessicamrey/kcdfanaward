@@ -3,6 +3,36 @@
 
 import { quotes } from "./quotes-data.js";
 
+//Scroll arrow
+
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+const firstSection = document.querySelector(".section");
+
+const topObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        scrollBtn.classList.remove("show");
+      } else {
+        scrollBtn.classList.add("show");
+      }
+
+    });
+  },
+  { threshold: 0.2 }
+);
+
+topObserver.observe(firstSection);
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+//
 
 // Read more quotes
 const perPage = 3;
