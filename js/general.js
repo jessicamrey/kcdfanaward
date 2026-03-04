@@ -13,7 +13,7 @@ const pagination = document.getElementById("quotes-pagination");
 
 function renderQuotes() {
   container.innerHTML = `
-    <div class="row g-4">
+    <div class="row g-4 more-quotes-h">
       ${quotes
         .slice((currentPage - 1) * perPage, currentPage * perPage)
         .map(

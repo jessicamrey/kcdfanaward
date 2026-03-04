@@ -565,6 +565,23 @@ COMMENTS SECTION
 		padding-left: 6%;
 		padding-right: 6%;
 	}
+	.more-quotes-h{
+		height: 60em!important;
+	}
+
+}
+
+@media (max-width: 1399px) and (min-width: 992px){
+	.more-quotes-h{
+		height: 25em !important;
+	}
+
+}
+@media (max-width: 991px) and (min-width: 769px) {
+	.more-quotes-h{
+		height: 35em;
+	}
+
 }
 
 .quote-nav.left {
@@ -595,11 +612,14 @@ COMMENTS SECTION
 }
 
 .more-quotes-section.show {
-  max-height: 3000px;
+  max-height: 5000px;
   opacity: 1;
   transform: translateY(0);
 }
 
+.more-quotes-h{
+	height: 20em;
+}
 
 .quote-card {
   border: 1px solid #d4af37;
