@@ -386,7 +386,7 @@ COMMENTS SECTION
 ======================= */
 
 .comments-section {
-  height: 100vh;
+  height: 150vh;
   background: url("../img/fabricBackground.jpg") center/cover no-repeat;
   position: relative;
 }
@@ -425,7 +425,7 @@ COMMENTS SECTION
  FUNDRAISING SECTION
 ======================= */
 .fundraising-section {
-  height: 100vh;
+  height: 110vh;
   position: relative; 
   overflow: hidden;
 }
@@ -756,6 +756,25 @@ COMMENTS SECTION
   background: #255e78;
 }
 
+.btn-gold:focus,
+.btn-gold:active,
+.btn-gold:focus:active {
+  background: #d6b26a;
+  color: #0d223a;
+  border: none;
+  box-shadow: none;
+}
+
+
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue:focus:active {
+  background: #2c6f8e;
+  border-radius: 999px;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  border: none;
+}
 /* =======================
  FOOTER
 ======================= */
@@ -773,14 +792,27 @@ COMMENTS SECTION
   opacity: 0.7;
 }
 
-.socials img {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.2s ease, opacity 0.2s;
-  background-color: white;
+.socials{
+  display:flex;
+  gap:10px;
 }
 
-.socials a:hover img {
-  transform: scale(1.1);
-  opacity: 0.8;
+.socials a{
+  width:40px;
+  height:40px;
+  background:#e6edf3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:4px;
+  transition:background 0.2s ease;
+}
+
+.socials a:hover{
+  background:#cfd8df;
+}
+
+.socials img{
+  width:20px;
+  height:20px;
 }
