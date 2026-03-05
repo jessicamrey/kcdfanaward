@@ -62,7 +62,7 @@ function renderQuotes() {
         .slice((currentPage - 1) * perPage, currentPage * perPage)
         .map(
           q => `
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-lg-4">
             <div class="quote-card h-100">
               <h3>${q.author}</h3>
               <p>${q.text}</p>

@@ -544,6 +544,7 @@ COMMENTS SECTION
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
+  white-space: pre-line;
 }
 
 .quote-content blockquote {
@@ -583,20 +584,20 @@ COMMENTS SECTION
 		padding-right: 6%;
 	}
 	.more-quotes-h{
-		height: 60em!important;
+		height: 80em!important;
 	}
 
 }
 
 @media (max-width: 1399px) and (min-width: 992px){
 	.more-quotes-h{
-		height: 25em !important;
+		height: 40em !important;
 	}
 
 }
 @media (max-width: 991px) and (min-width: 769px) {
 	.more-quotes-h{
-		height: 35em;
+		height: 60em !important;
 	}
 
 }
@@ -635,7 +636,7 @@ COMMENTS SECTION
 }
 
 .more-quotes-h{
-	height: 20em;
+	height: 35em;
 }
 
 .quote-card {
@@ -643,6 +644,7 @@ COMMENTS SECTION
   padding: 25px;
   color: #fff;
   background: transparent;
+  white-space: pre-line;
 }
 
 
